@@ -47,8 +47,8 @@ capabilities to loop and create the number of resources requested by the user.
 ### Develop the composition locally
 
 1. First, let's define the `UserAccess` API that will allow the user to specify
-the number of IAM resources in `.spec.count` by creating a
-`CompositeResourceDefinition` (XRD). This XRD can be found in
+the number of IAM resources in `.spec.count`. We create this new API by creating
+a `CompositeResourceDefinition` (XRD). This XRD can be found in
 [xrd.yaml](./xrd.yaml).
 1. Next, we create the composition that contains the resource creation and
 iteration logic. This can be found in [composition.yaml](./composition.yaml).
@@ -101,3 +101,20 @@ crossplane beta trace useraccessclaim/example
 
 After a short time, we should see as many `User` and `AccessKey` resources as
 specified by our claim's `spec.count`.
+
+### Explore resources in the console
+
+In addition to this nice `trace` tree view, we can examine the same resources in
+the rich console list and graph views.
+
+```
+Navigate to your control plane in https://console.upbound.io/ and click on the `UserAccessClaim` resource `example` on the Resources tab, followed by the List and Graph buttons.
+```
+
+## Clean up cloud resources
+
+When we are done with this demo, we can clean up the cloud resources with:
+
+```
+kubectl delete -f claim.yaml
+```
