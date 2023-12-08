@@ -1,0 +1,30 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: useraccesses.example.crossplane.io
+spec:
+  group: example.crossplane.io
+  names:
+    kind: UserAccess
+    plural: useraccesses
+  claimNames:
+    kind: UserAccessClaim
+    plural: useraccessclaim
+  versions:
+  - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              count:
+                type: integer
+          status:
+            type: object
+            properties:
+              dummy:
+                type: string            
+    served: true
+    referenceable: true
