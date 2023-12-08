@@ -92,24 +92,34 @@ live resources being created in AWS.
 kubectl apply -f claim.yaml
 ```
 
-Let's check in on the progress of our resources being created using the `trace`
-command:
+This will run our Composition's function pipeline to create the resources in the
+cloud.
+
+### Explore resources in the console
+
+We can examine the newly created resources in the rich console list and graph views.
 
 ```
-crossplane beta trace useraccessclaim/example
+Navigate to your control plane in https://console.upbound.io/ and click on the `UserAccessClaim` resource `example` on the Resources tab, followed by the List and Graph buttons.
 ```
 
 After a short time, we should see as many `User` and `AccessKey` resources as
 specified by our claim's `spec.count`.
 
-### Explore resources in the console
+### Update resources in the console
 
-In addition to this nice `trace` tree view, we can examine the same resources in
-the rich console list and graph views.
+We created our `UserAccess` resources using `kubectl` (or a GitOps flow), but
+now let's update the existing resource in the console.
 
-```
-Navigate to your control plane in https://console.upbound.io/ and click on the `UserAccessClaim` resource `example` on the Resources tab, followed by the List and Graph buttons.
-```
+1. Navigate to your control plane in https://console.upbound.io/ and click on
+   the Self Service tab.
+1. Click on "open control plane portal" and click on the `UserAccessClaim` in
+   the left navigation pane.
+1. Find our resource and click Edit to bring up an editing form, where you can
+   change the `spec.count` value.
+
+Navigate back to the Resources tab and watch the number of `User` and
+`AccessKey` resources change in response.
 
 ## Clean up cloud resources
 

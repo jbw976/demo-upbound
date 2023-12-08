@@ -21,6 +21,8 @@ spec:
             properties:
               count:
                 type: integer
+            required:
+            - count
           status:
             type: object
             properties:
