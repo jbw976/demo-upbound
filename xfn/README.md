@@ -11,7 +11,7 @@ create a variable number of IAM related resources in AWS.
 
 Log into https://console.upbound.io and navigate to Control Planes to create a
 new control plane.  This new control plane should install the Configuration
-https://github.com/jbw976/configuration-eks to get started.
+https://github.com/jbw976/configuration-aws-xfn to get started.
 
 ### Connect to the control plane
 
