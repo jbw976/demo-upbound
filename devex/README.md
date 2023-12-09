@@ -91,3 +91,11 @@ Finally, we can also generate a graph visualization using the `dot` format:
 crossplane beta trace kubernetescluster/my-cluster -o dot | dot -Tpng -o trace.png
 open trace.png
 ```
+
+## Clean up cloud resources
+
+When we are done with this demo, we can clean up the cloud resources with:
+
+```
+kubectl delete -f cluster.yaml
+```
