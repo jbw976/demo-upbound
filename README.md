@@ -5,3 +5,4 @@ This repo contains a series of demos of Crossplane functionality running in Upbo
 Available demos:
 
 * [XFN](./xfn): Composition Function demo
+* [DevEx](./devex): Developer Experience improvements demo
