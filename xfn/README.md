@@ -22,7 +22,7 @@ to first `up ctp disconnect` if you've previously connected to a different
 control plane.
 
 ```
-up ctp connect jared-01 -a jaredorg --token=<redacted>
+up ctp connect aws-xfn -a jaredorg --token=<redacted>
 ```
 
 ### Add AWS authentication to the control plane
