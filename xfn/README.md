@@ -121,6 +121,25 @@ now let's update the existing resource in the console.
 Navigate back to the Resources tab and watch the number of `User` and
 `AccessKey` resources change in response.
 
+## BONUS: Create your own function
+
+So far in this demo, we've shown how to consume an existing function
+(go-templates) to compose together resources in new ways. These general
+functions do the heavy lifting and give you an new (but efficient) high level
+experience like templating.
+
+If you want to go even deeper though and have full control over the composition
+logic with a general purpose programming language, that is possible also.
+
+Run the `xpkg init` command to generate a new Function project for you with all
+the scaffolding needed to start focusing on writing your own custom logic:
+
+```
+mkdir my-func
+cd my-func
+crossplane beta xpkg init my-func function-template-go
+```
+
 ## Clean up cloud resources
 
 When we are done with this demo, we can clean up the cloud resources with:
