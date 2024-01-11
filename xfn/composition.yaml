@@ -41,12 +41,17 @@ spec:
                 {{ setResourceNameAnnotation (print "sample-access-key-" $i) }}
             spec:
               forProvider:
-                userSelector:
+                # typo for existing field
+                userSelectorFoo:
                   matchLabels:
                     testing.upbound.io/example-name: test-user-{{ $i }}
+              # wrong indentation for an otherwise correct field
+              pgpKey: foo
               writeConnectionSecretToRef:
                 name: sample-access-key-secret-{{ $i }}
                 namespace: upbound-system
+                # non existing field
+                fookey: foovalue
             {{- end }}
             ---
             apiVersion: meta.gotemplating.fn.crossplane.io/v1alpha1
